@@ -29,6 +29,7 @@ func Func1() { // exported function Func1
 	//...
 	fmt.Println("Fun1")
 	fmt.Println(".....")
+	fmt.Println("...")
 
 
 }
