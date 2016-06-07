@@ -26,6 +26,9 @@ var handleError = function (err) {
 };
 
 var distpath='dist/';
+//my_css_framework
+var diocssSRC='my_CSS_framework/src/sass/*.scss';
+var diocssDIST='my_CSS_framework/dist/css/';
 //默认方法
 gulp.task('default', function() {
     gutil.log('message');
@@ -188,7 +191,6 @@ gulp.task('watchTestsass',function () {
     })
 
 
-
 });
 
 gulp.task('sass', function() {
@@ -206,5 +208,33 @@ gulp.task('sass', function() {
         .on('error', function (err) {
             console.error('Error!', err.message);
         });
+
+});
+
+//my_css_framework 监听
+
+
+gulp.task('watchCSSsass',function () {
+    var cssSrc = 'my_CSS_framework/src/sass/*.scss',
+        cssSrca= 'my_CSS_framework/src/css';//源码也输出一份
+
+    gulp.watch('my_CSS_framework/src/sass/**/*.scss', function (event) {
+        var paths = watchPath(event,'my_CSS_framework/src/sass/','my_CSS_framework/src/css/');
+
+        gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath);
+        gutil.log('Dist ' + paths.distPath);
+
+        gulp.src(paths.srcPath)
+        return sass(cssSrc, {style: 'expanded'})
+            .pipe(gulp.dest(cssSrca))
+            .pipe(rename({suffix: '.min' }))
+            .pipe(cssnano())//精简
+            .pipe(gulp.dest(cssSrca))
+            .on('error', function (err) {
+                console.error('Error!', err.message);
+            });
+
+    })
+
 
 });
