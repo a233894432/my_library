@@ -1,0 +1,51 @@
+{
+  "name": "my_library",
+  "version": "1.0.0",
+  "description": "my_library",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a233894432/my_library.git"
+  },
+  "keywords": [
+    "diogo",
+    "require"
+  ],
+  "author": "diogo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a233894432/my_library/issues"
+  },
+  "homepage": "https://github.com/a233894432/my_library#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "colors": ">=1.0.3",
+    "gulp-autoprefixer": ">=2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": ">=2.2.1",
+    "gulp-less": ">=3.0.2",
+    "gulp-minify-css": ">=1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": ">=1.0.1",
+    "gulp-sourcemaps": ">=1.5.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "gulp-watch-path": "^0.1.0",
+    "stream-combiner2": "^1.1.1"
+  },
+  "devDependencies": {
+    "gulp-cache": "^0.4.4",
+    "gulp-clean": "^0.3.2",
+    "browser-sync": "^2.11.1",
+    "gulp-cssnano": "^2.0.0",
+    "gulp-html-builder": "^0.1.0",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-tmod": "^2.0.0",
+    "gulp-uglify": "^1.5.3"
+  }
+}
