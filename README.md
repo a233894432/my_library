@@ -3,5 +3,5 @@
 ## 时间记录
 ## learn_english 学习英语
 ## 个人前端CSS  framework 1.0 编写  以后都用自用CSS框架 
-    - 不在对IE8(以下的浏览器支持)
+    - Browser support covers IE9+ as well as all other modern browsers.
      
