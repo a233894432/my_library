@@ -10,4 +10,7 @@ bin-release/
 # information for Eclipse / Flash Builder.
 /node_modules/
 /.sass-cache/
-/.idea/
+.idea/
+
+*.iml
+ 
