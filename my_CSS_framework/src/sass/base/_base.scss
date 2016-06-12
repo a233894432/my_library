@@ -14,7 +14,8 @@ html {
 // Set focus on elements that can recieve it.
 // http://www.w3.org/TR/html401/interact/forms.html#adef-tabindex
 :focus {
-  outline: 1px solid $selection-focus-color;
+  //outline: 1px solid $selection-focus-color;
+  outline: none;  // Set focus on none
 }
 
 // Offset for inputs

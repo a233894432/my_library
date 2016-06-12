@@ -189,7 +189,7 @@ html {
 }
 
 :focus {
-  outline: 1px solid #3b99fc;
+  outline: none;
 }
 
 button:focus, input:focus, textarea:focus, keygen:focus, select:focus {
