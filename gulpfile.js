@@ -236,5 +236,32 @@ gulp.task('watchCSSsass',function () {
 
     })
 
+});
+
+
+/**
+ * 合并JS
+ */
+gulp.task('watchJQjs',function(){
+
+    gulp.watch('my_CSS_framework/src/js/vendor/*.js', function (event) {
+        var paths = watchPath(event,'my_CSS_framework/src/js/vendor/','my_CSS_framework/src/js/');
+
+        gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath);
+        gutil.log('Dist ' + paths.distPath);
+
+        var combined = combiner.obj([
+            gulp.src('my_CSS_framework/src/js/vendor/*.js'),
+            concat('verdor.js'),
+            //uglify(),
+            gulp.dest('my_CSS_framework/src/js/')
+        ]);
+
+        combined.on('error', handleError);
+    })
+
+
+
+
 
 });

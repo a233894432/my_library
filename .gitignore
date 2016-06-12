@@ -11,6 +11,5 @@ bin-release/
 /node_modules/
 /.sass-cache/
 .idea/
-
 *.iml
 
