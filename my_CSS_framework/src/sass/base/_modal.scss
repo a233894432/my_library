@@ -42,6 +42,18 @@
   animation-fill-mode: both;
   -webkit-animation-duration: .18s;
   animation-duration: .18s;
+
+  h3 {
+    padding: 0 45px 0 10px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 auto;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #EBEBEB;
+  }
+
 }
 
 .layermborder {
@@ -117,16 +129,6 @@
   }
 }
 
-.layermchild h3 {
-  padding: 0 45px 0 10px;
-  height: 50px;
-  line-height: 50px;
-  border-bottom: 1px solid #EBEBEB;
-  font-size: 16px;
-  font-weight: 400;
-  border-radius: 3px 3px 0 0;
-  border-bottom: 1px solid #EBEBEB;
-}
 
 .layermchild h3,
 .layermbtn span {

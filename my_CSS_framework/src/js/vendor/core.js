@@ -120,7 +120,20 @@
     $.isChinese = function (str) {
         var pattern = /^[\u0391-\uFFE5]+$/g;
         return pattern.test(str);
+    };
+    /**
+     *  getQuery 从URL地址栏中获取model的参数
+     * @param name
+     * @param url 可传.可不传
+     * @returns {*}
+     */
+    $.getQuery= function (name,url) {
+        var reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
+        var url= url || window.location.search.substr(1).match(reg);
+        if (reg.test(url)) return decodeURIComponent(RegExp.$2.replace(/\+/g, " ")); return "";
     }
+
+
 
 
 } (jQuery, window, document));
