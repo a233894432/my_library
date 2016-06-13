@@ -20,19 +20,19 @@
       .push-#{$breakpoint}-#{$i} {
         left: $temp-width;
 
-        [dir="rtl"] & {
-          left: auto;
-          right: $temp-width;
-        }
+        //[dir="rtl"] & {
+        //  left: auto;
+        //  right: $temp-width;
+        //}
       }
 
       .pull-#{$breakpoint}-#{$i} {
         right: $temp-width;
 
-        [dir="rtl"] & {
-          right: auto;
-          left: $temp-width;
-        }
+        //[dir="rtl"] & {
+        //  right: auto;
+        //  left: $temp-width;
+        //}
       }
     }
   }

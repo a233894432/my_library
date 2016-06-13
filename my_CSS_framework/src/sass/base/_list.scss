@@ -5,10 +5,10 @@ ol {
   margin: 1rem 0;
   padding-left: 2.5rem;
 
-  [dir="rtl"] & {
-    padding-left: 0;
-    padding-right: 2.5rem;
-  }
+  //[dir="rtl"] & {
+  //  padding-left: 0;
+  //  padding-right: 2.5rem;
+  //}
 }
 
 ul ul,
@@ -21,9 +21,9 @@ ul.no-bullets,
 ol.no-bullets {
   padding-left: 0;
 
-  [dir="rtl"] & {
-    padding-right: 0;
-  }
+  //[dir="rtl"] & {
+  //  padding-right: 0;
+  //}
 
   & > li {
     list-style: none;
@@ -52,11 +52,11 @@ ol.colored {
       text-align: right;
       text-decoration: none;
 
-      [dir="rtl"] & {
-        left: auto;
-        right: -1rem;
-        text-align: left;
-      }
+      //[dir="rtl"] & {
+      //  left: auto;
+      //  right: -1rem;
+      //  text-align: left;
+      //}
     }
   }
 }
@@ -78,9 +78,9 @@ ol.colored {
       -webkit-margin-start: 0; // 2
       font-size: 1rem;
 
-      [dir="rtl"] & {
-        right: -3.125rem;
-      }
+      //[dir="rtl"] & {
+      //  right: -3.125rem;
+      //}
     }
   }
 }
@@ -103,20 +103,20 @@ dt, dd {
       text-align: right;
       text-overflow: ellipsis;
 
-      [dir="rtl"] & {
-        clear: right;
-        float: right;
-        text-align: left;
-      }
+      //[dir="rtl"] & {
+      //  clear: right;
+      //  float: right;
+      //  text-align: left;
+      //}
     }
 
     & > dd {
       margin-left: 10.375rem;
 
-      [dir="rtl"] & {
-        margin-left: auto;
-        margin-right: 10.375rem;
-      }
+      //[dir="rtl"] & {
+      //  margin-left: auto;
+      //  margin-right: 10.375rem;
+      //}
     }
   }
 }

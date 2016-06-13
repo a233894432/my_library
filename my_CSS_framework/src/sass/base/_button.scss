@@ -55,7 +55,7 @@ input {
 .btn-group > * {
   float: left;
 
-  [dir="rtl"] & {
-    float: right;
-  }
+  //[dir="rtl"] & {
+  //  float: right;
+  //}
 }

@@ -23,17 +23,17 @@
 .push {
   float: right;
 
-  [dir="rtl"] & {
-    float: left;
-  }
+  //[dir="rtl"] & {
+  //  float: left;
+  //}
 }
 
 .pull {
   float: left;
 
-  [dir="rtl"] & {
-    float: right;
-  }
+  //[dir="rtl"] & {
+  //  float: right;
+  //}
 }
 // XXS, XS, S, M, L viewports.
 @include push-pull(xxs);
@@ -66,17 +66,17 @@
 .text-pull {
   text-align: left;
 
-  [dir="rtl"] & {
-    text-align: right;
-  }
+  //[dir="rtl"] & {
+  //  text-align: right;
+  //}
 }
 
 .text-push {
   text-align: right;
 
-  [dir="rtl"] & {
-    text-align: left;
-  }
+  //[dir="rtl"] & {
+  //  text-align: left;
+  //}
 }
 
 .text-center {

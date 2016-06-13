@@ -8,34 +8,34 @@
     .push-#{$bp} {
       float: right ;
 
-      [dir="rtl"] & {
-        float: left ;
-      }
+      //[dir="rtl"] & {
+      //  float: left ;
+      //}
     }
 
     .pull-#{$bp} {
       float: left ;
 
-      [dir="rtl"] & {
-        float: right ;
-      }
+      //[dir="rtl"] & {
+      //  float: right ;
+      //}
     }
 
     @include bp-max($bp) {
       .push-#{$bp}-only {
         float: right ;
 
-        [dir="rtl"] & {
-          float: left ;
-        }
+        //[dir="rtl"] & {
+        //  float: left ;
+        //}
       }
 
       .pull-#{$bp}-only {
         float: left ;
 
-        [dir="rtl"] & {
-          float: right ;
-        }
+        //[dir="rtl"] & {
+        //  float: right ;
+        //}
       }
     }
   }
@@ -46,17 +46,17 @@
       .push-#{$bp} {
         float: right ;
 
-        [dir="rtl"] & {
-          float: left ;
-        }
+        //[dir="rtl"] & {
+        //  float: left ;
+        //}
       }
 
       .pull-#{$bp} {
         float: left ;
 
-        [dir="rtl"] & {
-          float: right ;
-        }
+        //[dir="rtl"] & {
+        //  float: right ;
+        //}
       }
       // Large doesn't need an "only" since it operates on min width.
       @if $bp != l {
@@ -64,17 +64,17 @@
           .push-#{$bp}-only {
             float: right ;
 
-            [dir="rtl"] & {
-              float: left ;
-            }
+            //[dir="rtl"] & {
+            //  float: left ;
+            //}
           }
 
           .pull-#{$bp}-only {
             float: left ;
 
-            [dir="rtl"] & {
-              float: right ;
-            }
+            //[dir="rtl"] & {
+            //  float: right ;
+            //}
           }
         }
       }

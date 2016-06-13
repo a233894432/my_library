@@ -56,9 +56,9 @@
   border-left: ($grid-column-gutter/2) solid transparent; // 1
   border-right: ($grid-column-gutter/2) solid transparent; // 1
   background-clip: padding-box; // 2
-  [dir="rtl"] & {
-    float: right;
-  }
+  //[dir="rtl"] & {
+  //  float: right;
+  //}
 }
 
 // Movable columns

@@ -1,5 +1,10 @@
-/**
- * Created by diogoxiang on 2016/6/12.
+/*!
+
+ @Name：前端基础库
+ @Author：Diogo
+ @Site：http://www.tomxiang.com
+ @License：LGPL
+
  */
 (function ($, w, d) {
 

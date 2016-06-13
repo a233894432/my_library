@@ -9,7 +9,8 @@
 "public/mixin/grid-state",
 "public/mixin/layout",
 "public/mixin/text-align",
-"public/mixin/visiblility";
+"public/mixin/visiblility",
+"public/mixin/mixin";
 
 
 
@@ -18,15 +19,22 @@
 "base/normalize",
 "base/base";
 
+// Helpers
+@import "base/helpers-layout";
+@import "base/helpers-visibility";
+
+//icon
+@import "base/icon";
 // Grid System
 @import "base/grid";
 
 // CSS Components
-@import "base/alerts";
+@import
+"base/alerts",
+"base/list",
+"base/modal";
 
-// Helpers
-@import "base/helpers-layout";
-@import "base/helpers-visibility";
+
 
 //custom this other projact different
 @import "customer/custom";

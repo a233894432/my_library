@@ -17,12 +17,12 @@
     color: inherit;
     font-size: $h3-font-size;
     font-weight: bold;
-
-    [dir="rtl"] & {
-      float: left;
-      right: auto;
-      left: -2.73rem;
-    }
+    //
+    //[dir="rtl"] & {
+    //  float: left;
+    //  right: auto;
+    //  left: -2.73rem;
+    //}
 
     &:hover {
       text-decoration: underline;
@@ -33,10 +33,10 @@
 .alert-dismissable {
   padding-right: 2.87rem;
 
-  [dir="rtl"] & {
-    padding-right: 1rem;
-    padding-left: 2.87rem;
-  }
+  //[dir="rtl"] & {
+  //  padding-right: 1rem;
+  //  padding-left: 2.87rem;
+  //}
 }
 
 .alert-heading {

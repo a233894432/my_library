@@ -8,17 +8,17 @@
     .text-#{$bp}-pull {
       text-align: left;
 
-      [dir="rtl"] & {
-        text-align: right;
-      }
+      //[dir="rtl"] & {
+      //  text-align: right;
+      //}
     }
 
     .text-#{$bp}-push {
       text-align: right;
 
-      [dir="rtl"] & {
-        text-align: left;
-      }
+      //[dir="rtl"] & {
+      //  text-align: left;
+      //}
     }
 
     .text-#{$bp}-center {
@@ -29,17 +29,17 @@
       .text-#{$bp}-pull-only {
         text-align: left;
 
-        [dir="rtl"] & {
-          text-align: right;
-        }
+        //[dir="rtl"] & {
+        //  text-align: right;
+        //}
       }
 
       .text-#{$bp}-push-only {
         text-align: right;
 
-        [dir="rtl"] & {
-          text-align: left;
-        }
+        //[dir="rtl"] & {
+        //  text-align: left;
+        //}
       }
 
       .text-#{$bp}-center-only {
@@ -54,17 +54,17 @@
       .text-#{$bp}-pull {
         text-align: left;
 
-        [dir="rtl"] & {
-          text-align: right;
-        }
+        //[dir="rtl"] & {
+        //  text-align: right;
+        //}
       }
 
       .text-#{$bp}-push {
         text-align: right;
 
-        [dir="rtl"] & {
-          text-align: left;
-        }
+        //[dir="rtl"] & {
+        //  text-align: left;
+        //}
       }
 
       .text-#{$bp}-center {
@@ -76,17 +76,17 @@
           .text-#{$bp}-pull-only {
             text-align: left;
 
-            [dir="rtl"] & {
-              text-align: right;
-            }
+            //[dir="rtl"] & {
+            //  text-align: right;
+            //}
           }
 
           .text-#{$bp}-push-only {
             text-align: right;
 
-            [dir="rtl"] & {
-              text-align: left;
-            }
+            //[dir="rtl"] & {
+            //  text-align: left;
+            //}
           }
 
           .text-#{$bp}-center-only {
