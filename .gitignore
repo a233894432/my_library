@@ -12,4 +12,6 @@ bin-release/
 /.sass-cache/
 .idea/
 *.iml
+expert_pc/
+# 这个是pc端发帖的东西..暂时不用上传到我的 My librarys 里去
 

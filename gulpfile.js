@@ -262,6 +262,33 @@ gulp.task('watchJQjs',function(){
 
 
 
+});
 
+
+/**
+ * expert_pc SASS .监听
+ */
+
+gulp.task('watchEXCSSsass',function () {
+    var cssSrc = 'expert_pc/sass/*.scss',
+        cssSrca= 'expert_pc/css';
+
+    gulp.watch('expert_pc/sass/**/*.scss', function (event) {
+        var paths = watchPath(event,'expert_pc/sass/','expert_pc/css/');
+
+        gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath);
+        gutil.log('Dist ' + paths.distPath);
+
+        gulp.src(paths.srcPath)
+        return sass(cssSrc, {style: 'expanded'})
+            .pipe(gulp.dest(cssSrca))
+            .pipe(rename({suffix: '.min' }))
+            .pipe(cssnano())//精简
+            .pipe(gulp.dest(cssSrca))
+            .on('error', function (err) {
+                console.error('Error!', err.message);
+            });
+
+    })
 
 });
