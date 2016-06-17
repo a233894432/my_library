@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     watchPath = require('gulp-watch-path'), //实际上我们只需要重新编译被修改的文件
     combiner = require('stream-combiner2'), //监听错误
     sourcemaps = require('gulp-sourcemaps'), //map调试
+    stripDebug = require('gulp-strip-debug'),//清理DEBUG与console
     clean = require('gulp-clean'); //清空文件夹
 ///var inject=require('gulp-inject'); // 功能 很强大的插入数据插件
 
@@ -243,7 +244,6 @@ gulp.task('watchCSSsass',function () {
  * 合并JS
  */
 gulp.task('watchJQjs',function(){
-
     gulp.watch('my_CSS_framework/src/js/vendor/*.js', function (event) {
         var paths = watchPath(event,'my_CSS_framework/src/js/vendor/','my_CSS_framework/src/js/');
 
@@ -290,5 +290,16 @@ gulp.task('watchEXCSSsass',function () {
             });
 
     })
+
+});
+
+
+gulp.task('ClearConsole',function () {
+    var jsSRC = 'expert_pc/html/**/*.js',
+        jsDEST= 'expert_pc/html';
+    return gulp.src(jsSRC)
+        .pipe(stripDebug())
+        .pipe(rename({suffix: '.min' }))
+        .pipe(gulp.dest(jsDEST));
 
 });
