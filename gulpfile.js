@@ -212,7 +212,9 @@ gulp.task('sass', function() {
 
 });
 
-//my_css_framework 监听
+/**
+ * my_css_framework 监听
+ */
 
 
 gulp.task('watchCSSsass',function () {
@@ -241,7 +243,7 @@ gulp.task('watchCSSsass',function () {
 
 
 /**
- * 合并JS
+ * 监听并合并JS
  */
 gulp.task('watchJQjs',function(){
     gulp.watch('my_CSS_framework/src/js/vendor/*.js', function (event) {
