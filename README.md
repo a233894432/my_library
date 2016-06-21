@@ -4,4 +4,6 @@
     - Browser support covers IE9+ as well as all other modern browsers.
 ## 前端框架插件 
      
-     
+    
+## webpack_demo 为webpack 与React 的测试目录 use  ES6
+## webpack_seed 为 Frontend engineering solution based on webpack and gulp.
