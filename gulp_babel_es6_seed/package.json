@@ -1,0 +1,13 @@
+{
+  "name": "gulp_babel_es6_seed",
+  "version": "",
+  "author": "diogo",
+  "license": "ISC",
+  "keywords": [
+    "diogo",
+    "require"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.10.1"
+  }
+}
