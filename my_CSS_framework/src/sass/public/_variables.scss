@@ -11,6 +11,12 @@ $black:            #000 !default;
 $white:            #fff !default;
 $red:			   #f00 !default;
 
+// Typography
+$font-family-sans-serif:  "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-sans-serif;
+
 
 // General Styles
 $base-font-size: 100% !default;
@@ -185,3 +191,7 @@ $tabs-nav-item-color-active: #454545 !default;
 
 // Dropdown
 $accordion-border-color: #c0c0c0 !default;
+
+$border-radius-base:    4px;
+$border-radius-lg:      8px;
+$border-radius-max:     200px;
