@@ -1,0 +1,13 @@
+{
+  "name": "my_require_router",
+  "version": "",
+  "author": "diogo",
+  "license": "ISC",
+  "keywords": [
+    "diogo",
+    "require"
+  ],
+  "devDependencies": {
+
+  }
+}
