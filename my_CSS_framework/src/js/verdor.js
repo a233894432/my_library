@@ -7,7 +7,7 @@
 
 
  */
-(function ($, w, d) {
+(function($, w, d) {
 
     "use strict";
 
@@ -16,7 +16,7 @@
      * @param length
      * @returns {string}
      */
-    $.pseudoUnique = function (length) {
+    $.pseudoUnique = function(length) {
         /// <summary>Returns a pseudo unique alpha-numeric string of the given length.</summary>
         /// <param name="length" type="Number">The length of the string to return. Defaults to 8.</param>
         /// <returns type="String">The pseudo unique alpha-numeric string.</returns>
@@ -41,8 +41,8 @@
     /**
      * 判断HTML 中 dir 值
      */
-    $.support.rtl = (function () {
-             return $("html[dir=rtl]").length ? true : false;
+    $.support.rtl = (function() {
+        return $("html[dir=rtl]").length ? true : false;
     }());
 
     /**
@@ -52,7 +52,7 @@
      * @return :true合理的IP地址
      *
      */
-    $.isIP = function (str) {
+    $.isIP = function(str) {
         var pattern = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
 
         return pattern.test(str);
@@ -75,7 +75,7 @@
          * 18段：180、181、182、183、184、185、186、187、188、189
          *
          */
-        var pattern =  /^(13[0-9]|14[57]|15[012356789]|17[0678]|18[0-9])\d{8}$/;
+        var pattern = /^(13[0-9]|14[57]|15[012356789]|17[0678]|18[0-9])\d{8}$/;
         return pattern.test(str);
     };
     /**
@@ -85,7 +85,7 @@
      * @return -> true表示合格的邮箱。
      *
      */
-    $.isEmail = function(str){
+    $.isEmail = function(str) {
         /**
          * @descrition:邮箱规则
          * 1.邮箱以a-z、A-Z、0-9开头，最小长度为1.
@@ -107,7 +107,7 @@
      * @return : true表示合理，验证通过
      *
      */
-    $.isAvaiableLength = function(minL,maxL,str){
+    $.isAvaiableLength = function(minL, maxL, str) {
         return (str.length >= minL && str.length <= maxL) ? true : false;
     };
 
@@ -118,7 +118,7 @@
      * @return : true表示全部为中文,false为不全是中文，或没有中文。
      *
      */
-    $.isChinese = function (str) {
+    $.isChinese = function(str) {
         var pattern = /^[\u0391-\uFFE5]+$/g;
         return pattern.test(str);
     };
@@ -128,16 +128,17 @@
      * @param url 可传.可不传
      * @returns {*}
      */
-    $.getQuery= function (name,url) {
+    $.getQuery = function(name, url) {
         var reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
-        var url= url || window.location.search.substr(1).match(reg);
-        if (reg.test(url)) return decodeURIComponent(RegExp.$2.replace(/\+/g, " ")); return "";
+        var url = url || window.location.search.substr(1).match(reg);
+        if (reg.test(url)) return decodeURIComponent(RegExp.$2.replace(/\+/g, " "));
+        return "";
     }
 
 
 
 
-} (jQuery, window, document));
+}(jQuery, window, document));
 /*!
 
  @Name：前端 弹窗组件库
@@ -146,14 +147,17 @@
  @License：LGPL
 
  */
-!function(win){
+! function(win) {
     "use strict";
 
-    var doc = document, query = 'querySelectorAll', claname = 'getElementsByClassName', S = function(s){
-        return doc[query](s);
-    };
+    var doc = document,
+        query = 'querySelectorAll',
+        claname = 'getElementsByClassName',
+        S = function(s) {
+            return doc[query](s);
+        };
 
-//默认配置
+    //默认配置
     var config = {
         type: 0, //样式
         shade: true,
@@ -163,142 +167,140 @@
     };
 
     var ready = {
-        extend: function(obj){
+        extend: function(obj) {
             var newobj = JSON.parse(JSON.stringify(config));
-            for(var i in obj){
+            for (var i in obj) {
                 newobj[i] = obj[i];
             }
             return newobj;
         },
-        timer: {}, end: {}
+        timer: {},
+        end: {}
     };
 
-//点触事件
-    ready.touch = function(elem, fn){
+    //点触事件
+    ready.touch = function(elem, fn) {
         var move;
-        if(!/Android|iPhone|SymbianOS|Windows Phone|iPad|iPod/.test(navigator.userAgent)){
-            return elem.addEventListener('click', function(e){
+        if (!/Android|iPhone|SymbianOS|Windows Phone|iPad|iPod/.test(navigator.userAgent)) {
+            return elem.addEventListener('click', function(e) {
                 fn.call(this, e);
             }, false);
         }
-        elem.addEventListener('touchmove', function(){
+        elem.addEventListener('touchmove', function() {
             move = true;
         }, false);
-        elem.addEventListener('touchend', function(e){
+        elem.addEventListener('touchend', function(e) {
             e.preventDefault();
             move || fn.call(this, e);
             move = false;
         }, false);
     };
 
-    var index = 0, classs = ['layermbox'], Layer = function(options){
-        var that = this;
-        that.config = ready.extend(options);
-        that.view();
-    };
+    var index = 0,
+        classs = ['layermbox'],
+        Layer = function(options) {
+            var that = this;
+            that.config = ready.extend(options);
+            that.view();
+        };
 
-    Layer.prototype.view = function(){
-        var that = this, config = that.config, layerbox = doc.createElement('div');
+    Layer.prototype.view = function() {
+        var that = this,
+            config = that.config,
+            layerbox = doc.createElement('div');
 
         that.id = layerbox.id = classs[0] + index;
-        layerbox.setAttribute('class', classs[0] + ' ' + classs[0]+(config.type || 0));
+        layerbox.setAttribute('class', classs[0] + ' ' + classs[0] + (config.type || 0));
         layerbox.setAttribute('index', index);
 
-        var title = (function(){
+        var title = (function() {
             var titype = typeof config.title === 'object';
-            return config.title
-                ? '<h3 style="'+ (titype ? config.title[1] : '') +'">'+ (titype ? config.title[0] : config.title)  +'</h3><button class="layermend"></button>'
-                : '';
+            return config.title ? '<h3 style="' + (titype ? config.title[1] : '') + '">' + (titype ? config.title[0] : config.title) + '</h3><button class="layermend"></button>' : '';
         }());
 
-        var button = (function(){
-            var btns = (config.btn || []).length, btndom;
-            if(btns === 0 || !config.btn){
+        var button = (function() {
+            var btns = (config.btn || []).length,
+                btndom;
+            if (btns === 0 || !config.btn) {
                 return '';
             }
-            btndom = '<span type="1">'+ config.btn[0] +'</span>'
-            if(btns === 2){
-                btndom = '<span type="0">'+ config.btn[1] +'</span>' + btndom;
+            btndom = '<span type="1">' + config.btn[0] + '</span>'
+            if (btns === 2) {
+                btndom = '<span type="0">' + config.btn[1] + '</span>' + btndom;
             }
-            return '<div class="layermbtn">'+ btndom + '</div>';
+            return '<div class="layermbtn">' + btndom + '</div>';
         }());
 
-        if(!config.fixed){
-            config.top = config.hasOwnProperty('top') ?  config.top : 100;
+        if (!config.fixed) {
+            config.top = config.hasOwnProperty('top') ? config.top : 100;
             config.style = config.style || '';
-            config.style += ' top:'+ ( doc.body.scrollTop + config.top) + 'px';
+            config.style += ' top:' + (doc.body.scrollTop + config.top) + 'px';
         }
 
-        if(config.type === 2){
+        if (config.type === 2) {
             config.content = '<i></i><i class="laymloadtwo"></i><i></i>';
         }
 
-        layerbox.innerHTML = (config.shade ? '<div '+ (typeof config.shade === 'string' ? 'style="'+ config.shade +'"' : '') +' class="laymshade"></div>' : '')
-            +'<div class="layermmain" '+ (!config.fixed ? 'style="position:static;"' : '') +'>'
-            +'<div class="section">'
-            +'<div class="layermchild '+ (config.className ? config.className : '') +' '+ ((!config.type && !config.shade) ? 'layermborder ' : '') + (config.anim ? 'layermanim' : '') +'" ' + ( config.style ? 'style="'+config.style+'"' : '' ) +'>'
-            + title
-            +'<div class="layermcont">'+ config.content +'</div>'
-            + button
-            +'</div>'
-            +'</div>'
-            +'</div>';
+        layerbox.innerHTML = (config.shade ? '<div ' + (typeof config.shade === 'string' ? 'style="' + config.shade + '"' : '') + ' class="laymshade"></div>' : '') + '<div class="layermmain" ' + (!config.fixed ? 'style="position:static;"' : '') + '>' + '<div class="section">' + '<div class="layermchild ' + (config.className ? config.className : '') + ' ' + ((!config.type && !config.shade) ? 'layermborder ' : '') + (config.anim ? 'layermanim' : '') + '" ' + (config.style ? 'style="' + config.style + '"' : '') + '>' + title + '<div class="layermcont">' + config.content + '</div>' + button + '</div>' + '</div>' + '</div>';
 
-        if(!config.type || config.type === 2){
-            var dialogs = doc[claname](classs[0] + config.type), dialen = dialogs.length;
-            if(dialen >= 1){
+        if (!config.type || config.type === 2) {
+            var dialogs = doc[claname](classs[0] + config.type),
+                dialen = dialogs.length;
+            if (dialen >= 1) {
                 layer.close(dialogs[0].getAttribute('index'))
             }
         }
 
         document.body.appendChild(layerbox);
-        var elem = that.elem = S('#'+that.id)[0];
+        var elem = that.elem = S('#' + that.id)[0];
         config.success && config.success(elem);
 
         that.index = index++;
         that.action(config, elem);
     };
 
-    Layer.prototype.action = function(config, elem){
+    Layer.prototype.action = function(config, elem) {
         var that = this;
 
         //自动关闭
-        if(config.time){
-            ready.timer[that.index] = setTimeout(function(){
+        if (config.time) {
+            ready.timer[that.index] = setTimeout(function() {
                 layer.close(that.index);
-            }, config.time*1000);
+            }, config.time * 1000);
         }
 
         //关闭按钮
-        if(config.title){
-            var end = elem[claname]('layermend')[0], endfn = function(){
-                config.cancel && config.cancel();
-                layer.close(that.index);
-            };
+        if (config.title) {
+            var end = elem[claname]('layermend')[0],
+                endfn = function() {
+                    config.cancel && config.cancel();
+                    layer.close(that.index);
+                };
             ready.touch(end, endfn);
         }
 
         //确认取消
-        var btn = function(){
+        var btn = function() {
             var type = this.getAttribute('type');
-            if(type == 0){
+            if (type == 0) {
                 config.no && config.no();
                 layer.close(that.index);
             } else {
                 config.yes ? config.yes(that.index) : layer.close(that.index);
             }
         };
-        if(config.btn){
-            var btns = elem[claname]('layermbtn')[0].children, btnlen = btns.length;
-            for(var ii = 0; ii < btnlen; ii++){
+        if (config.btn) {
+            var btns = elem[claname]('layermbtn')[0].children,
+                btnlen = btns.length;
+            for (var ii = 0; ii < btnlen; ii++) {
                 ready.touch(btns[ii], btn);
             }
         }
 
         //点遮罩关闭
-        if(config.shade && config.shadeClose){
+        if (config.shade && config.shadeClose) {
             var shade = elem[claname]('laymshade')[0];
-            ready.touch(shade, function(){
+            ready.touch(shade, function() {
                 layer.close(that.index, config.end);
             });
         }
@@ -311,14 +313,14 @@
         index: index,
 
         //核心方法
-        open: function(options){
+        open: function(options) {
             var o = new Layer(options || {});
             return o.index; //返回当前弹窗的索引
         },
 
-        close: function(index){
-            var ibox = S('#'+classs[0]+index)[0];
-            if(!ibox) return;
+        close: function(index) {
+            var ibox = S('#' + classs[0] + index)[0];
+            if (!ibox) return;
             ibox.innerHTML = '';
             doc.body.removeChild(ibox);
             clearTimeout(ready.timer[index]);
@@ -328,23 +330,25 @@
         },
 
         //关闭所有layer层
-        closeAll: function(){
+        closeAll: function() {
             var boxs = doc[claname](classs[0]);
-            for(var i = 0, len = boxs.length; i < len; i++){
-                layer.close((boxs[0].getAttribute('index')|0));
+            for (var i = 0, len = boxs.length; i < len; i++) {
+                layer.close((boxs[0].getAttribute('index') | 0));
             }
         }
     };
 
     'function' == typeof define ? define(function() {
         return layer;
-    }) : function(){
+    }) : function() {
 
-        var js = document.scripts, script = js[js.length - 1], jsPath = script.src;
+        var js = document.scripts,
+            script = js[js.length - 1],
+            jsPath = script.src;
         var path = jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
 
         //如果合并方式，则需要单独引入layer.css
-        if(script.getAttribute('merge')) return;
+        if (script.getAttribute('merge')) return;
 
         /**
          * 暂时不用引入CSS
