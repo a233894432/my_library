@@ -305,3 +305,32 @@ gulp.task('ClearConsole',function () {
         .pipe(gulp.dest(jsDEST));
 
 });
+
+
+/**
+ * gebo_pc SASS .监听
+ */
+
+gulp.task('watchGBCSSsass',function () {
+    var cssSrc = 'gebo_src/sass/*.scss',
+        cssSrca= 'gebo_src/css';
+
+    gulp.watch('gebo_src/sass/**/*.scss', function (event) {
+        var paths = watchPath(event,'gebo_src/sass/','gebo_src/css/');
+
+        gutil.log(gutil.colors.green(event.type) + ' ' + paths.srcPath);
+        gutil.log('Dist ' + paths.distPath);
+
+        gulp.src(paths.srcPath)
+        return sass(cssSrc, {style: 'expanded'})
+            .pipe(gulp.dest(cssSrca))
+            .pipe(rename({suffix: '.min' }))
+            .pipe(cssnano())//精简
+            .pipe(gulp.dest(cssSrca))
+            .on('error', function (err) {
+                console.error('Error!', err.message);
+            });
+
+    })
+
+});

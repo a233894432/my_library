@@ -1,0 +1,17 @@
+/*! gebo.css v0.0.1 | MIT License | http://www.github.com/a233894432 */
+// <Project name>
+// =============================================================================
+.#{$ns}con{
+  background: $black;
+}
+.grid-geboDiv{
+  width: 100%;
+  background: $black;
+  .container{
+    max-width:980px;
+  }
+}
+
+.intro {
+  color: $white;
+}
