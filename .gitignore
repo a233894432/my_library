@@ -19,3 +19,4 @@ expert_pc/
 webpack_demo/node_modules/
 gulp_babel_es6_seed/node_modules/
 my_CSS_framework/src/sass/.sass-cache/
+.idea/
